@@ -2,6 +2,15 @@ interface Reportable {
   summary(): string;
 };
 
+const newDrink = {
+  color: 'brown',
+  carbonated: true,
+  sugar: 40,
+  summary(): string {
+    return `My drink has ${this.sugar}g of sugar`;
+  }
+};
+
 const oldCivic = {
   name: 'civic',
   year: new Date(),
@@ -11,8 +20,9 @@ const oldCivic = {
   }
 };
 
-const printSummary = (vehicle: Reportable ): void => {
-  console.log(vehicle.summary());
+const printSummary = (item: Reportable ): void => {
+  console.log(item.summary());
 };
 
 printSummary(oldCivic);
+printSummary(newDrink);
